@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useId } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -14,22 +14,55 @@ export const TextHoverEffect = ({
   automatic?: boolean;
   className?: string;
 }) => {
+  const uid = useId().replace(/:/g, "");
   const svgRef = useRef<SVGSVGElement>(null);
+  const [mounted, setMounted] = useState(false);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
 
   useEffect(() => {
-    if (svgRef.current && cursor.x !== null && cursor.y !== null) {
-      const svgRect = svgRef.current.getBoundingClientRect();
-      const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100;
-      const cyPercentage = ((cursor.y - svgRect.top) / svgRect.height) * 100;
-      setMaskPosition({
-        cx: `${cxPercentage}%`,
-        cy: `${cyPercentage}%`,
-      });
-    }
-  }, [cursor]);
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted || !svgRef.current) return;
+    const svgRect = svgRef.current.getBoundingClientRect();
+    const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100;
+    const cyPercentage = ((cursor.y - svgRect.top) / svgRect.height) * 100;
+    setMaskPosition({
+      cx: `${cxPercentage}%`,
+      cy: `${cyPercentage}%`,
+    });
+  }, [cursor, mounted]);
+
+  const gradientId = `textGradient-${uid}`;
+  const maskGradientId = `revealMask-${uid}`;
+  const maskId = `textMask-${uid}`;
+
+  if (!mounted) {
+    return (
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 300 100"
+        xmlns="http://www.w3.org/2000/svg"
+        className={cn("select-none uppercase", className)}
+        aria-hidden="true"
+      >
+        <text
+          x="50%"
+          y="50%"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          strokeWidth="0.3"
+          className="fill-transparent stroke-[#3ca2fa] font-[helvetica] text-7xl font-bold"
+        >
+          {text}
+        </text>
+      </svg>
+    );
+  }
 
   return (
     <svg
@@ -45,7 +78,7 @@ export const TextHoverEffect = ({
     >
       <defs>
         <linearGradient
-          id="textGradient"
+          id={gradientId}
           gradientUnits="userSpaceOnUse"
           cx="50%"
           cy="50%"
@@ -63,7 +96,7 @@ export const TextHoverEffect = ({
         </linearGradient>
 
         <motion.radialGradient
-          id="revealMask"
+          id={maskGradientId}
           gradientUnits="userSpaceOnUse"
           r="20%"
           initial={{ cx: "50%", cy: "50%" }}
@@ -73,13 +106,13 @@ export const TextHoverEffect = ({
           <stop offset="0%" stopColor="white" />
           <stop offset="100%" stopColor="black" />
         </motion.radialGradient>
-        <mask id="textMask">
+        <mask id={maskId}>
           <rect
             x="0"
             y="0"
             width="100%"
             height="100%"
-            fill="url(#revealMask)"
+            fill={`url(#${maskGradientId})`}
           />
         </mask>
       </defs>
@@ -100,8 +133,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className="fill-transparent stroke-[#3ca2fa] font-[helvetica] text-7xl font-bold 
-        dark:stroke-[#3ca2fa99]"
+        className="fill-transparent stroke-[#3ca2fa] font-[helvetica] text-7xl font-bold dark:stroke-[#3ca2fa99]"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
           strokeDashoffset: 0,
@@ -119,9 +151,9 @@ export const TextHoverEffect = ({
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        stroke="url(#textGradient)"
+        stroke={`url(#${gradientId})`}
         strokeWidth="0.3"
-        mask="url(#textMask)"
+        mask={`url(#${maskId})`}
         className="fill-transparent font-[helvetica] text-7xl font-bold"
       >
         {text}

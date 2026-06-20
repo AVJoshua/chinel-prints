@@ -8,7 +8,7 @@ const root = path.join(__dirname, "..");
 const previewDir = path.join(root, ".preview");
 const mountDir = path.join(previewDir, "chinel-prints");
 const outDir = path.join(root, "out");
-const port = process.env.PORT || "3001";
+const port = process.env.PORT || "3002";
 
 rmSync(previewDir, { recursive: true, force: true });
 mkdirSync(mountDir, { recursive: true });

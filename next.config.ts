@@ -3,7 +3,8 @@ import path from "path";
 import { BASE_PATH } from "./src/lib/site";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // Static export only for production builds — avoids dev server 500 errors
+  ...(process.env.NODE_ENV === "production" ? { output: "export" as const } : {}),
   basePath: BASE_PATH,
   trailingSlash: true,
   outputFileTracingRoot: path.join(__dirname),

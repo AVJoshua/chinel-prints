@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3001",
+    "dev:clean": "rm -rf .next && next dev --port 3001",
     "build": "next build",
     "preview": "npm run build && node scripts/preview.mjs",
     "preview:static": "node scripts/preview.mjs",
