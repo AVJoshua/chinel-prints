@@ -218,6 +218,7 @@ h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
   width: auto;
   object-fit: contain;
   display: block;
+  background: transparent;
 }
 
 .logo--header .logo__image {
@@ -228,6 +229,7 @@ h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
 .logo--footer .logo__image {
   height: 64px;
   max-width: 220px;
+  filter: brightness(1.05);
 }
 
 .nav {

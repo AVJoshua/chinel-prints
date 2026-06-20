@@ -21,7 +21,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: { icon: assetPath("/logo.jpeg") },
+  icons: { icon: assetPath("/logo.png") },
   title: {
     default: "Chinel Prints — Printing & Branding Company in Lagos, Nigeria",
     template: "%s — Chinel Prints",

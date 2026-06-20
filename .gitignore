@@ -21,6 +21,9 @@
 # local static preview mount
 /.preview/
 
+# python venv for asset processing
+/.venv/
+
 # production
 /build
 

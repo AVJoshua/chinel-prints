@@ -15,7 +15,7 @@ export function Logo({ className = "", size = "header" }: LogoProps) {
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={assetPath("/logo.jpeg")}
+        src={assetPath("/logo.png")}
         alt="Chinel Prints"
         width={1080}
         height={867}
