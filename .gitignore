@@ -18,6 +18,9 @@
 # legacy static site
 /_legacy/
 
+# local static preview mount
+/.preview/
+
 # production
 /build
 

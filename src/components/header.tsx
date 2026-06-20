@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getWhatsAppUrl } from "@/lib/config";
+import { Logo } from "@/components/logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -41,10 +42,7 @@ export function Header() {
         role="banner"
       >
         <div className="container header__inner">
-          <Link href="/" className="logo" aria-label="Chinel Prints Home">
-            <span className="logo__icon">C</span>
-            Chinel Prints
-          </Link>
+          <Logo />
 
           <nav className="nav" aria-label="Main navigation">
             <ul className="nav__list">

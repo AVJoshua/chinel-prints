@@ -30,7 +30,15 @@ npm install
 npm run dev
 ```
 
-Local preview: **http://localhost:3001/chinel-prints/**
+Open **http://localhost:3001/chinel-prints/** (the `/chinel-prints` prefix is required).
+
+If you see 404 errors for CSS/JS/logo, stop any old servers and restart:
+
+```bash
+fuser -k 3001/tcp 2>/dev/null
+rm -rf .next
+npm run dev
+```
 
 ## Build & Deploy
 
@@ -39,6 +47,16 @@ Static export builds to the `out/` folder:
 ```bash
 npm run build
 ```
+
+### Preview production build locally
+
+Do **not** serve the `out/` folder directly — assets use the `/chinel-prints` base path. Use:
+
+```bash
+npm run preview
+```
+
+Then open **http://localhost:3001/chinel-prints/**
 
 ### GitHub Pages
 

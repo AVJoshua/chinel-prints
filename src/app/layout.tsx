@@ -3,7 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, assetPath } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,7 +21,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: assetPath("/logo.jpeg") },
   title: {
     default: "Chinel Prints — Printing & Branding Company in Lagos, Nigeria",
     template: "%s — Chinel Prints",

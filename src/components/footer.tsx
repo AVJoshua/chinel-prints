@@ -3,6 +3,7 @@ import {
   TextHoverEffect,
   FooterBackgroundGradient,
 } from "@/components/ui/text-hover-effect";
+import { Logo } from "@/components/logo";
 import { SITE_CONFIG } from "@/lib/config";
 
 const InstagramIcon = () => (
@@ -44,9 +45,7 @@ export function Footer() {
 
         <div className="footer__grid">
           <div>
-            <Link href="/" className="logo">
-              <span className="logo__icon">C</span> Chinel Prints
-            </Link>
+            <Logo size="footer" />
             <p className="footer__desc">
               Lagos&apos;s premier printing and branding company. Delivering
               premium quality interior frames, signage, and custom printing
