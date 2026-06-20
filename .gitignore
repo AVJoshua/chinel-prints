@@ -15,6 +15,9 @@
 /.next/
 /out/
 
+# legacy static site
+/_legacy/
+
 # production
 /build
 

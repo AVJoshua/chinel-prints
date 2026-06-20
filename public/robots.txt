@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chinelprints.com/sitemap.xml
+Sitemap: https://avjoshua.github.io/chinel-prints/sitemap.xml

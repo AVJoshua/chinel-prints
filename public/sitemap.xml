@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://chinelprints.com/</loc>
+    <loc>https://avjoshua.github.io/chinel-prints/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://chinelprints.com/about.html</loc>
+    <loc>https://avjoshua.github.io/chinel-prints/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chinelprints.com/services.html</loc>
+    <loc>https://avjoshua.github.io/chinel-prints/services/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chinelprints.com/portfolio.html</loc>
+    <loc>https://avjoshua.github.io/chinel-prints/portfolio/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chinelprints.com/contact.html</loc>
+    <loc>https://avjoshua.github.io/chinel-prints/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

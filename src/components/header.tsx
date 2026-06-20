@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { getWhatsAppUrl } from "@/lib/config";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -104,7 +105,7 @@ export function Header() {
             Request Quote
           </Link>
           <a
-            href="https://wa.me/2348012345678"
+            href={getWhatsAppUrl()}
             className="btn btn--whatsapp"
             target="_blank"
             rel="noopener noreferrer"
