@@ -79,7 +79,8 @@ export const TextHoverEffect = ({
 
     const updateLayout = () => {
       if (!svgRef.current) return;
-      setCompact(svgRef.current.getBoundingClientRect().width < 420);
+      // Two-line layout when rendered width is under ~65% of a typical mobile viewport
+      setCompact(svgRef.current.getBoundingClientRect().width < 400);
     };
 
     updateLayout();
