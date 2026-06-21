@@ -32,13 +32,17 @@ npm run dev
 
 Open **http://localhost:3001/chinel-prints/** (the `/chinel-prints` prefix is required).
 
-If you see 404 errors for CSS/JS/logo, stop any old servers and restart:
+### Fixing 404 errors (CSS/JS not loading)
+
+This usually means a stale dev server or cached browser HTML. Run:
 
 ```bash
-fuser -k 3001/tcp 2>/dev/null
-rm -rf .next
-npm run dev
+npm run dev:clean
 ```
+
+Then hard refresh the browser: **Ctrl+Shift+R**.
+
+> **Note:** `contentscript.js` warnings in the console come from browser extensions (e.g. MetaMask), not this site — safe to ignore.
 
 ## Build & Deploy
 
