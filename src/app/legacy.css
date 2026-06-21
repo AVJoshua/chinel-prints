@@ -937,8 +937,8 @@ h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
   margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
   aspect-ratio: 48 / 11;
   height: auto;
-  min-height: max(56px, calc(90vw * 0.11));
-  max-height: min(calc(90vw * 0.22), 22vh, 220px);
+  min-height: max(48px, calc(90vw * 0.09));
+  max-height: min(calc(90vw * 0.2), 20vh, 200px);
   pointer-events: auto;
 }
 
@@ -949,43 +949,15 @@ h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
   overflow: visible;
 }
 
-@media (max-width: 640px) {
-  .footer__hero {
-    width: 90%;
-    aspect-ratio: 48 / 14;
-    min-height: max(72px, calc(90vw * 0.16));
-    max-height: min(calc(90vw * 0.28), 26vh, 160px);
-  }
-}
-
-@media (max-width: 380px) {
-  .footer__hero {
-    aspect-ratio: 4 / 1.5;
-    min-height: max(68px, calc(90vw * 0.18));
-    max-height: min(calc(90vw * 0.32), 24vh, 130px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .footer__hero {
-    min-height: max(80px, calc(90vw * 0.09));
-    max-height: min(calc(90vw * 0.18), 20vh, 200px);
-  }
-}
-
-@media (min-width: 1280px) {
-  .footer__hero {
-    width: 90%;
-    max-height: min(calc(0.9 * 1200px * 0.22), 220px);
-  }
+.text-hover-effect text {
+  white-space: nowrap;
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
   .footer__hero {
     width: 90%;
-    aspect-ratio: 48 / 9;
-    min-height: max(44px, 12vh);
-    max-height: min(16vh, calc(90vw * 0.14));
+    min-height: max(40px, 10vh);
+    max-height: min(14vh, calc(90vw * 0.12));
     margin-bottom: 1rem;
   }
 }

@@ -4,9 +4,10 @@ import React, { useRef, useEffect, useState, useId } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-const VIEWBOX = { width: 480, height: 110 };
+const VIEWBOX = "0 0 480 110";
 const FONT_SIZE = 36;
 const STROKE_WIDTH = 1.2;
+const TEXT_LENGTH = 440;
 const DASH_LENGTH = 1200;
 
 type TextHoverEffectProps = {
@@ -40,6 +41,8 @@ function EffectText({
     fontWeight: 700,
     fontFamily: "Helvetica, Arial, sans-serif",
     strokeWidth: STROKE_WIDTH,
+    textLength: TEXT_LENGTH,
+    lengthAdjust: "spacingAndGlyphs" as const,
     className: cn("fill-transparent uppercase", className),
     style,
     stroke,
@@ -68,28 +71,10 @@ export const TextHoverEffect = ({
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
-  const [compact, setCompact] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  useEffect(() => {
-    if (!mounted || !svgRef.current) return;
-
-    const updateLayout = () => {
-      if (!svgRef.current) return;
-      // Two-line layout when rendered width is under ~65% of a typical mobile viewport
-      setCompact(svgRef.current.getBoundingClientRect().width < 400);
-    };
-
-    updateLayout();
-
-    const observer = new ResizeObserver(updateLayout);
-    observer.observe(svgRef.current);
-
-    return () => observer.disconnect();
-  }, [mounted]);
 
   useEffect(() => {
     if (!mounted || !svgRef.current) return;
@@ -105,78 +90,10 @@ export const TextHoverEffect = ({
   const gradientId = `textGradient-${uid}`;
   const maskGradientId = `revealMask-${uid}`;
   const maskId = `textMask-${uid}`;
-  const viewBox = compact
-    ? `0 0 ${VIEWBOX.width} ${VIEWBOX.height + 40}`
-    : `0 0 ${VIEWBOX.width} ${VIEWBOX.height}`;
 
   const renderText = (variant: "static" | "ghost" | "animated" | "gradient") => {
-    const words = text.split(" ");
-    const line1 = words[0] ?? text;
-    const line2 = words.slice(1).join(" ");
-
-    if (compact && line2) {
-      const lines = [
-        { y: "40%", label: line1 },
-        { y: "68%", label: line2 },
-      ];
-      return lines.map((line) => {
-        const props = {
-          x: "50%",
-          y: line.y,
-          textAnchor: "middle" as const,
-          dominantBaseline: "middle" as const,
-          fontSize: FONT_SIZE * 0.9,
-          fontWeight: 700,
-          fontFamily: "Helvetica, Arial, sans-serif",
-          strokeWidth: STROKE_WIDTH,
-          className: "fill-transparent uppercase",
-        };
-
-        if (variant === "animated") {
-          return (
-            <motion.text
-              key={line.label}
-              {...props}
-              className={cn(props.className, "stroke-[#3ca2fa]")}
-              initial={{ strokeDashoffset: DASH_LENGTH, strokeDasharray: DASH_LENGTH }}
-              animate={{ strokeDashoffset: 0, strokeDasharray: DASH_LENGTH }}
-              transition={{ duration: 4, ease: "easeInOut" }}
-            >
-              {line.label}
-            </motion.text>
-          );
-        }
-
-        const className =
-          variant === "ghost"
-            ? "stroke-neutral-200 dark:stroke-neutral-800"
-            : variant === "gradient"
-              ? undefined
-              : "stroke-[#3ca2fa]";
-
-        const style = variant === "ghost" ? { opacity: hovered ? 0.7 : 0 } : undefined;
-        const stroke = variant === "gradient" ? `url(#${gradientId})` : undefined;
-        const mask = variant === "gradient" ? `url(#${maskId})` : undefined;
-
-        return (
-          <text
-            key={line.label}
-            {...props}
-            className={cn(props.className, className)}
-            style={style}
-            stroke={stroke}
-            mask={mask}
-          >
-            {line.label}
-          </text>
-        );
-      });
-    }
-
     if (variant === "static") {
-      return (
-        <EffectText className="stroke-[#3ca2fa]">{text}</EffectText>
-      );
+      return <EffectText className="stroke-[#3ca2fa]">{text}</EffectText>;
     }
 
     if (variant === "ghost") {
@@ -212,17 +129,18 @@ export const TextHoverEffect = ({
     );
   };
 
+  const svgProps = {
+    width: "100%" as const,
+    height: "100%" as const,
+    viewBox: VIEWBOX,
+    preserveAspectRatio: "xMidYMid meet" as const,
+    xmlns: "http://www.w3.org/2000/svg",
+    className: cn("text-hover-effect select-none", className),
+  };
+
   if (!mounted) {
     return (
-      <svg
-        width="100%"
-        height="100%"
-        viewBox={viewBox}
-        preserveAspectRatio="xMidYMid meet"
-        xmlns="http://www.w3.org/2000/svg"
-        className={cn("text-hover-effect select-none", className)}
-        aria-hidden="true"
-      >
+      <svg {...svgProps} aria-hidden="true">
         {renderText("static")}
       </svg>
     );
@@ -230,16 +148,12 @@ export const TextHoverEffect = ({
 
   return (
     <svg
+      {...svgProps}
       ref={svgRef}
-      width="100%"
-      height="100%"
-      viewBox={viewBox}
-      preserveAspectRatio="xMidYMid meet"
-      xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
-      className={cn("text-hover-effect select-none cursor-pointer", className)}
+      className={cn(svgProps.className, "cursor-pointer")}
     >
       <defs>
         <linearGradient
