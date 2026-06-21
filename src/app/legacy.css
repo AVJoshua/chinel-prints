@@ -932,9 +932,50 @@ h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
 .footer__hero {
   position: relative;
   z-index: 1;
-  height: clamp(100px, 18vw, 180px);
-  margin-bottom: 2.5rem;
+  width: 100%;
+  max-width: min(960px, 100%);
+  margin-inline: auto;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  aspect-ratio: 48 / 11;
+  height: clamp(72px, 10vw + 4vh, 200px);
+  min-height: 64px;
+  max-height: min(200px, 22vh);
   pointer-events: auto;
+}
+
+.text-hover-effect {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+@media (max-width: 640px) {
+  .footer__hero {
+    aspect-ratio: 48 / 15;
+    height: clamp(88px, 22vw, 140px);
+    max-height: 160px;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer__hero {
+    aspect-ratio: 4 / 1.6;
+    height: clamp(80px, 26vw, 120px);
+  }
+}
+
+@media (min-width: 1024px) and (min-aspect-ratio: 16/9) {
+  .footer__hero {
+    height: clamp(96px, 8vw + 3vh, 180px);
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .footer__hero {
+    height: clamp(56px, 14vh, 96px);
+    margin-bottom: 1.25rem;
+  }
 }
 
 .footer__content {
