@@ -6,12 +6,14 @@ import { QuoteForm } from "@/components/quote-form";
 import { getWhatsAppUrl } from "@/lib/config";
 import {
   SERVICES,
+  SERVICE_BACKGROUNDS,
   WHY_CHOOSE_US,
   CATEGORIES,
   STEPS,
   PORTFOLIO_PREVIEW,
 } from "@/lib/data";
 import { FEATURE_ICONS, SERVICE_ICONS } from "@/lib/service-icons";
+import { assetPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Chinel Prints — Printing & Branding Company in Lagos, Nigeria",
@@ -89,6 +91,7 @@ export default function HomePage() {
                   alt="Interior frame display"
                   width={600}
                   height={800}
+                  priority
                 />
               </div>
               <div className="hero__gallery-item">
@@ -126,14 +129,25 @@ export default function HomePage() {
             </p>
           </div>
           <div className="services-grid">
-            {SERVICES.map((service) => (
-              <div key={service} className="service-card">
-                <div className="service-card__icon">
-                  {SERVICE_ICONS[service]}
+            {SERVICES.map((service) => {
+              const background = SERVICE_BACKGROUNDS[service];
+              return (
+                <div
+                  key={service}
+                  className={`service-card${background ? " service-card--bg" : ""}`}
+                  style={
+                    background
+                      ? { backgroundImage: `url(${assetPath(background)})` }
+                      : undefined
+                  }
+                >
+                  <div className="service-card__icon">
+                    {SERVICE_ICONS[service]}
+                  </div>
+                  <h3 className="service-card__title">{service}</h3>
                 </div>
-                <h3 className="service-card__title">{service}</h3>
-              </div>
-            ))}
+              );
+            })}
           </div>
           <div className="text-center mt-2">
             <Link href="/services" className="btn btn--outline">

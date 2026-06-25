@@ -20,6 +20,14 @@ export const SERVICES = [
   "UV Printing",
 ] as const;
 
+export const SERVICE_BACKGROUNDS: Partial<
+  Record<(typeof SERVICES)[number], string>
+> = {
+  "Business Cards": "/images/business_card.png",
+  "T-Shirt Printing": "/images/t_shirt.jpeg",
+  "Mug Branding": "/images/MUGS.jpeg",
+};
+
 export const WHY_CHOOSE_US = [
   {
     title: "Fast Turnaround",
