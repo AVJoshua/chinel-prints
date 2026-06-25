@@ -26,6 +26,11 @@ export const SERVICE_BACKGROUNDS: Partial<
   "Business Cards": "/images/business_card.png",
   "T-Shirt Printing": "/images/t_shirt.jpeg",
   "Mug Branding": "/images/MUGS.jpeg",
+  "Frameless Frames": "/images/FRAMES.jpeg",
+  "Flyers & Handbills": "/images/flyer.jpeg",
+  "Roll-Up Banners": "/images/ROLL UP.jpeg",
+  "Sticker Printing": "/images/sticker.jpeg",
+  "Packaging Design": "/images/packaging.jpeg",
 };
 
 export const WHY_CHOOSE_US = [

@@ -137,7 +137,9 @@ export default function HomePage() {
                   className={`service-card${background ? " service-card--bg" : ""}`}
                   style={
                     background
-                      ? { backgroundImage: `url(${assetPath(background)})` }
+                      ? {
+                          backgroundImage: `url("${encodeURI(assetPath(background))}")`,
+                        }
                       : undefined
                   }
                 >
