@@ -93,7 +93,7 @@ export const TextHoverEffect = ({
 
   const renderText = (variant: "static" | "ghost" | "animated" | "gradient") => {
     if (variant === "static") {
-      return <EffectText className="stroke-[#52c5fe]">{text}</EffectText>;
+      return <EffectText className="stroke-[#143db2]">{text}</EffectText>;
     }
 
     if (variant === "ghost") {
@@ -110,7 +110,7 @@ export const TextHoverEffect = ({
     if (variant === "animated") {
       return (
         <EffectText
-          className="stroke-[#52c5fe] dark:stroke-[#52c5fe99]"
+          className="stroke-[#143db2] dark:stroke-[#143db299]"
           motionProps={{
             initial: { strokeDashoffset: DASH_LENGTH, strokeDasharray: DASH_LENGTH },
             animate: { strokeDashoffset: 0, strokeDasharray: DASH_LENGTH },
@@ -165,7 +165,7 @@ export const TextHoverEffect = ({
         >
           {hovered && (
             <>
-              <stop offset="0%" stopColor="#52c5fe" />
+              <stop offset="0%" stopColor="#143db2" />
               <stop offset="25%" stopColor="#ef4444" />
               <stop offset="50%" stopColor="#80eeb4" />
               <stop offset="75%" stopColor="#06b6d4" />
@@ -208,7 +208,7 @@ export const FooterBackgroundGradient = () => {
       className="absolute inset-0 z-0"
       style={{
         background:
-          "radial-gradient(125% 125% at 50% 10%, #0F0F1166 50%, #52c5fe33 100%)",
+          "radial-gradient(125% 125% at 50% 10%, #0F0F1166 50%, #143db233 100%)",
       }}
     />
   );
