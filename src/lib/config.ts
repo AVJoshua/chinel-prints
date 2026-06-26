@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
   name: "Chinel Prints",
   tagline: "Professional Printing & Branding Solutions in Lagos",
-  phone: "+2347063848710",
-  phoneDisplay: "+234 706 384 8710",
+  phone: "+234 811 411 8934",
+  phoneDisplay: "+234 811 411 8934",
   email: "hello@chinelprints.com",
   address: "Lagos, Nigeria",
   whatsappMessage:
