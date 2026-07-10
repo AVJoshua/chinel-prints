@@ -33,16 +33,13 @@ export default function HomePage() {
     <main>
       {/* Hero */}
       <section className="hero" aria-label="Hero">
-        <div className="hero__bg" aria-hidden="true">
-          <Image
-            src="/images/chinel_prints_banne .jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: "cover" }}
-          />
-        </div>
+        <div
+          className="hero__bg"
+          aria-hidden="true"
+          style={{
+            backgroundImage: `url("${encodeURI(assetPath("/images/chinel_prints_banne .jpg"))}")`,
+          }}
+        />
         <div className="hero__overlay" aria-hidden="true" />
         <div className="container hero__content">
           <div className="hero__inner">

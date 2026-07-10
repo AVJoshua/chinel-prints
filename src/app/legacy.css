@@ -369,12 +369,29 @@ h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
 .hero__bg {
   position: absolute;
   inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-.hero__bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+@media (max-width: 639px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__bg {
+    background-position: center 32%;
+  }
+
+  .hero__content {
+    padding: 2.5rem 0 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__bg {
+    background-position: center 28%;
+  }
 }
 
 .hero__overlay {
