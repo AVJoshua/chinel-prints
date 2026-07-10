@@ -35,7 +35,7 @@ export default function HomePage() {
       <section className="hero" aria-label="Hero">
         <div className="hero__bg" aria-hidden="true">
           <Image
-            src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1920&q=80&auto=format&fit=crop"
+            src="/images/chinel_prints_banne .jpg"
             alt=""
             fill
             priority

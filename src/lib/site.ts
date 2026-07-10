@@ -1,4 +1,6 @@
-export const BASE_PATH = "/chinel-prints";
+/** GitHub Pages project path in production; root in local dev for simpler URLs */
+export const BASE_PATH =
+  process.env.NODE_ENV === "production" ? "/chinel-prints" : "";
 
 export const SITE_URL = "https://avjoshua.github.io/chinel-prints";
 

@@ -21,7 +21,7 @@ if (clean || !existsSync(path.join(root, ".next"))) {
   console.log("Cleared .next cache");
 }
 
-console.log(`\nStarting dev server at http://localhost:${port}/chinel-prints/`);
+console.log(`\nStarting dev server at http://localhost:${port}/`);
 console.log("If assets 404, hard refresh: Ctrl+Shift+R\n");
 
 const child = spawn("npx", ["next", "dev", "--port", port], {
