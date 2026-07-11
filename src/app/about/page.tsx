@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getWhatsAppUrl } from "@/lib/config";
+import { assetPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -88,7 +89,7 @@ export default function AboutPage() {
         <div className="container about-grid">
           <div className="about-image">
             <Image
-              src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80&auto=format&fit=crop"
+              src={assetPath("/images/about_us_pic.png")}
               alt="Chinel Prints team at work in Lagos"
               width={800}
               height={600}

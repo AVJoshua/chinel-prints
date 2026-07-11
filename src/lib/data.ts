@@ -31,6 +31,8 @@ export const SERVICE_BACKGROUNDS: Partial<
   "Roll-Up Banners": "/images/ROLL UP.jpeg",
   "Sticker Printing": "/images/sticker.jpeg",
   "Packaging Design": "/images/packaging.jpeg",
+  "Acrylic Signage": "/images/acrylic_signage.jpeg",
+  "Interior Frames": "/images/interior_frames.jpeg",
 };
 
 export const WHY_CHOOSE_US = [

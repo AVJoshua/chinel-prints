@@ -40,8 +40,7 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Interior Frames",
         description:
           "Premium interior frames for homes, offices, and galleries. Available in various sizes, materials, and finishes. Perfect for artwork, photos, certificates, and decorative prints.",
-        image:
-          "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80&auto=format&fit=crop",
+        image: "/images/interior_frames.jpeg",
         alt: "Interior frames Nigeria by Chinel Prints",
       },
       {
@@ -72,8 +71,7 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Acrylic Signage",
         description:
           "Elegant acrylic signs for storefronts, reception areas, and directional signage. Durable, professional, and visually striking.",
-        image:
-          "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80&auto=format&fit=crop",
+        image: "/images/acrylic_signage.jpeg",
         alt: "Acrylic signage Lagos printing company",
       },
       {
