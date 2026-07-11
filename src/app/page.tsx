@@ -84,8 +84,8 @@ export default function HomePage() {
             <div className="hero__gallery" aria-hidden="true">
               <div className="hero__gallery-item">
                 <Image
-                  src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80&auto=format&fit=crop"
-                  alt="Interior frame display"
+                  src={assetPath("/images/office_branding.png")}
+                  alt="Office branding display"
                   width={600}
                   height={800}
                   priority
@@ -93,16 +93,16 @@ export default function HomePage() {
               </div>
               <div className="hero__gallery-item">
                 <Image
-                  src="https://images.unsplash.com/photo-1611162617474-5b21e939e113?w=400&q=80&auto=format&fit=crop"
-                  alt="Branding materials"
+                  src={assetPath("/images/MUGS.jpeg")}
+                  alt="Branded mugs"
                   width={400}
                   height={400}
                 />
               </div>
               <div className="hero__gallery-item">
                 <Image
-                  src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&q=80&auto=format&fit=crop"
-                  alt="Print projects"
+                  src={assetPath("/images/FRAMES.jpeg")}
+                  alt="Frame display"
                   width={400}
                   height={400}
                 />

@@ -111,8 +111,7 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Business Cards",
         description:
           "Premium business cards with various finishes — matte, gloss, embossed, and spot UV. Make a lasting first impression.",
-        image:
-          "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80&auto=format&fit=crop",
+        image: "/images/business_card.png",
         alt: "Business cards printing Lagos",
       },
       {
@@ -179,8 +178,7 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Sticker Printing",
         description:
           "Custom stickers in all shapes and sizes — product labels, bumper stickers, window decals, and branded seals.",
-        image:
-          "https://images.unsplash.com/photo-1572635196233-15949d84f9e1?w=600&q=80&auto=format&fit=crop",
+        image: "/images/sticker.jpeg",
         alt: "Sticker printing custom printing Nigeria",
       },
       {
@@ -195,16 +193,14 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Mug Branding",
         description:
           "Custom branded mugs for corporate gifts, events, and promotions. Full-color printing with durable, dishwasher-safe finishes.",
-        image:
-          "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=600&q=80&auto=format&fit=crop",
+        image: "/images/MUGS.jpeg",
         alt: "Mug branding printing company Lagos",
       },
       {
         title: "T-Shirt Printing",
         description:
           "Screen printing, heat transfer, and DTG t-shirt printing for events, teams, uniforms, and promotional wear.",
-        image:
-          "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80&auto=format&fit=crop",
+        image: "/images/t_shirt.jpeg",
         alt: "T-shirt printing business branding Lagos",
       },
       {

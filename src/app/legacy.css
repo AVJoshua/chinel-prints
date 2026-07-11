@@ -1491,6 +1491,8 @@ h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
     border-radius: var(--radius-md);
     overflow: hidden;
     aspect-ratio: 1;
+    background: transparent;
+    opacity: 0.25;
   }
 
   .hero__gallery-item:first-child {
@@ -1498,9 +1500,14 @@ h3 { font-size: clamp(1.125rem, 2.5vw, 1.375rem); }
     aspect-ratio: auto;
   }
 
+  .hero__gallery-item > span,
   .hero__gallery-item img {
     width: 100%;
     height: 100%;
+    background: transparent !important;
+  }
+
+  .hero__gallery-item img {
     object-fit: cover;
   }
 
