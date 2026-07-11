@@ -33,6 +33,8 @@ export const SERVICE_BACKGROUNDS: Partial<
   "Packaging Design": "/images/packaging.jpeg",
   "Acrylic Signage": "/images/acrylic_signage.jpeg",
   "Interior Frames": "/images/interior_frames.jpeg",
+  "Large Format Printing": "/images/large_format.jpeg",
+  "Office Branding": "/images/office_branding.png",
 };
 
 export const WHY_CHOOSE_US = [

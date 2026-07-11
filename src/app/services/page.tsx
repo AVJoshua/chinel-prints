@@ -94,8 +94,7 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Large Format Printing",
         description:
           "Billboards, building wraps, vehicle wraps, and oversized prints. High-resolution output for maximum visual impact.",
-        image:
-          "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80&auto=format&fit=crop",
+        image: "/images/large_format.jpeg",
         alt: "Large format printing Nigeria",
       },
     ],
@@ -125,8 +124,7 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Office Branding",
         description:
           "Complete office branding solutions — wall graphics, door signs, reception displays, and branded stationery for a cohesive look.",
-        image:
-          "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format&fit=crop",
+        image: "/images/office_branding.png",
         alt: "Office branding printing company Lagos",
       },
       {
