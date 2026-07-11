@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getWhatsAppUrl } from "@/lib/config";
+import { assetPath } from "@/lib/site";
+
+function serviceImageSrc(image: string) {
+  return image.startsWith("/") ? encodeURI(assetPath(image)) : image;
+}
 
 export const metadata: Metadata = {
   title: "Printing Services",
@@ -47,8 +52,7 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Frameless Frames",
         description:
           "Modern frameless designs for a sleek, contemporary look. Ideal for minimalist interiors and professional office spaces across Lagos.",
-        image:
-          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&auto=format&fit=crop",
+        image: "/images/FRAMES.jpeg",
         alt: "Frameless frames printing Lagos",
       },
       {
@@ -86,8 +90,7 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Roll-Up Banners",
         description:
           "Portable roll-up banners perfect for trade shows, conferences, and retail displays. Easy setup with professional presentation.",
-        image:
-          "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&auto=format&fit=crop",
+        image: "/images/ROLL UP.jpeg",
         alt: "Roll-up banners branding company Lagos",
       },
       {
@@ -147,16 +150,14 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         title: "Event Branding",
         description:
           "Full event branding packages — backdrops, step-and-repeat banners, table cards, programs, and directional signage.",
-        image:
-          "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&auto=format&fit=crop",
+        image: "/images/event_branding.jpeg",
         alt: "Event branding printing Lagos",
       },
       {
         title: "Wedding Prints",
         description:
           "Beautiful wedding invitations, programs, menus, thank-you cards, and decorative prints for your special day.",
-        image:
-          "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80&auto=format&fit=crop",
+        image: "/images/wedding_print.jpeg",
         alt: "Wedding prints custom printing Nigeria",
       },
     ],
@@ -223,7 +224,7 @@ function ServiceDetailCard({ item }: { item: ServiceItem }) {
     <article className="service-detail-card">
       <div className="service-detail-card__image">
         <Image
-          src={item.image}
+          src={serviceImageSrc(item.image)}
           alt={item.alt}
           width={600}
           height={338}

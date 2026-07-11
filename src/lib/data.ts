@@ -35,6 +35,8 @@ export const SERVICE_BACKGROUNDS: Partial<
   "Interior Frames": "/images/interior_frames.jpeg",
   "Large Format Printing": "/images/large_format.jpeg",
   "Office Branding": "/images/office_branding.png",
+  "Event Branding": "/images/event_branding.jpeg",
+  "Wedding Prints": "/images/wedding_print.jpeg",
 };
 
 export const WHY_CHOOSE_US = [
