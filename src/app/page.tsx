@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { FAQ } from "@/components/faq";
+import { HeroIntro } from "@/components/hero-intro";
+import { HeroStats } from "@/components/hero-stats";
 import { QuoteForm } from "@/components/quote-form";
 import { getWhatsAppUrl } from "@/lib/config";
 import {
   SERVICES,
   SERVICE_BACKGROUNDS,
   WHY_CHOOSE_US,
-  CATEGORIES,
   STEPS,
-  PORTFOLIO_PREVIEW,
 } from "@/lib/data";
 import { FEATURE_ICONS, SERVICE_ICONS } from "@/lib/service-icons";
 import { assetPath } from "@/lib/site";
@@ -42,73 +41,21 @@ export default function HomePage() {
         />
         <div className="hero__overlay" aria-hidden="true" />
         <div className="container hero__content">
-          <div className="hero__inner">
-            <div>
-              <span className="hero__badge">Lagos&apos;s Trusted Print Partner</span>
-              <h1 className="hero__title">
-                Professional Printing &amp; Branding Solutions in <span>Lagos</span>
-              </h1>
-              <p className="hero__subtitle">
-                From stunning interior frames to bold event branding, Chinel Prints
-                delivers premium quality print products that make your business
-                stand out across Nigeria.
-              </p>
-              <div className="hero__actions">
-                <a href="#quote" className="btn btn--primary">
-                  Request Quote
-                </a>
-                <a
-                  href={getWhatsAppUrl()}
-                  className="btn btn--secondary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Chat on WhatsApp
-                </a>
-              </div>
-              <div className="hero__stats">
-                <div>
-                  <div className="hero__stat-value">500+</div>
-                  <div className="hero__stat-label">Projects Delivered</div>
-                </div>
-                <div>
-                  <div className="hero__stat-value">19+</div>
-                  <div className="hero__stat-label">Print Services</div>
-                </div>
-                <div>
-                  <div className="hero__stat-value">24hr</div>
-                  <div className="hero__stat-label">Fast Turnaround</div>
-                </div>
-              </div>
-            </div>
-            <div className="hero__gallery" aria-hidden="true">
-              <div className="hero__gallery-item">
-                <Image
-                  src={assetPath("/images/office_branding.png")}
-                  alt="Office branding display"
-                  width={600}
-                  height={800}
-                  priority
-                />
-              </div>
-              <div className="hero__gallery-item">
-                <Image
-                  src={assetPath("/images/MUGS.jpeg")}
-                  alt="Branded mugs"
-                  width={400}
-                  height={400}
-                />
-              </div>
-              <div className="hero__gallery-item">
-                <Image
-                  src={assetPath("/images/FRAMES.jpeg")}
-                  alt="Frame display"
-                  width={400}
-                  height={400}
-                />
-              </div>
-            </div>
+          <HeroIntro />
+          <div className="hero__actions">
+            <a href="#quote" className="btn btn--primary">
+              Request Quote
+            </a>
+            <a
+              href={getWhatsAppUrl()}
+              className="btn btn--secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat on WhatsApp
+            </a>
           </div>
+          <HeroStats />
         </div>
       </section>
 
@@ -183,36 +130,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Categories */}
-      <section className="section" aria-labelledby="categories-heading">
-        <div className="container">
-          <div className="section-header section-header--center">
-            <span className="section-label">Explore</span>
-            <h2 className="section-title" id="categories-heading">
-              Featured Categories
-            </h2>
-            <p className="section-desc">
-              Browse our most popular printing and branding categories.
-            </p>
-          </div>
-          <div className="categories-grid">
-            {CATEGORIES.map((category) => (
-              <Link key={category.title} href={category.href} className="category-card">
-                <Image
-                  src={category.image}
-                  alt={category.alt}
-                  width={500}
-                  height={375}
-                />
-                <div className="category-card__overlay">
-                  <span className="category-card__title">{category.title}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* How It Works */}
       <section className="section section--dark" aria-labelledby="how-heading">
         <div className="container">
@@ -236,43 +153,6 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Preview */}
-      <section className="section section--gray" aria-labelledby="portfolio-heading">
-        <div className="container">
-          <div className="section-header section-header--center">
-            <span className="section-label">Our Work</span>
-            <h2 className="section-title" id="portfolio-heading">
-              Portfolio Preview
-            </h2>
-            <p className="section-desc">
-              A glimpse of the quality printing and branding work we deliver for
-              clients across Nigeria.
-            </p>
-          </div>
-          <div className="portfolio-grid">
-            {PORTFOLIO_PREVIEW.map((item) => (
-              <Link key={item.title} href="/portfolio" className="portfolio-item">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={500}
-                  height={500}
-                />
-                <div className="portfolio-item__overlay">
-                  <span className="portfolio-item__title">{item.title}</span>
-                  <span className="portfolio-item__category">{item.category}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-2">
-            <Link href="/portfolio" className="btn btn--outline">
-              View Full Portfolio
-            </Link>
           </div>
         </div>
       </section>

@@ -55,14 +55,6 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         image: "/images/FRAMES.jpeg",
         alt: "Frameless frames printing Lagos",
       },
-      {
-        title: "Canvas Frames",
-        description:
-          "High-quality canvas prints stretched and framed to perfection. Transform your photos and artwork into stunning wall displays.",
-        image:
-          "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80&auto=format&fit=crop",
-        alt: "Canvas frames custom printing Nigeria",
-      },
     ],
   },
   {
@@ -77,14 +69,6 @@ const SERVICE_SECTIONS: ServiceSection[] = [
           "Elegant acrylic signs for storefronts, reception areas, and directional signage. Durable, professional, and visually striking.",
         image: "/images/acrylic_signage.jpeg",
         alt: "Acrylic signage Lagos printing company",
-      },
-      {
-        title: "Flex Banners",
-        description:
-          "Weather-resistant flex banners for outdoor advertising, events, and promotions. Available in all sizes with vibrant full-color printing.",
-        image:
-          "https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=600&q=80&auto=format&fit=crop",
-        alt: "Flex banners printing Lagos",
       },
       {
         title: "Roll-Up Banners",
@@ -115,27 +99,11 @@ const SERVICE_SECTIONS: ServiceSection[] = [
         alt: "Business cards printing Lagos",
       },
       {
-        title: "Logo Design",
-        description:
-          "Professional logo design and brand identity packages. From concept to final files ready for all print and digital applications.",
-        image:
-          "https://images.unsplash.com/photo-1634942537034-2534966747f1?w=600&q=80&auto=format&fit=crop",
-        alt: "Logo design business branding Lagos",
-      },
-      {
         title: "Office Branding",
         description:
           "Complete office branding solutions — wall graphics, door signs, reception displays, and branded stationery for a cohesive look.",
         image: "/images/office_branding.png",
         alt: "Office branding printing company Lagos",
-      },
-      {
-        title: "Packaging Design",
-        description:
-          "Custom packaging design and printing for products, gift boxes, and retail packaging that elevates your brand presence.",
-        image:
-          "https://images.unsplash.com/photo-1607083206869-4c8dac5915dc?w=600&q=80&auto=format&fit=crop",
-        alt: "Packaging design custom printing Nigeria",
       },
     ],
   },
@@ -167,27 +135,11 @@ const SERVICE_SECTIONS: ServiceSection[] = [
     title: "Promotional Materials & Gifts",
     items: [
       {
-        title: "Flyers & Handbills",
-        description:
-          "Eye-catching flyers and handbills for promotions, launches, and campaigns. Various paper stocks and finishes available.",
-        image:
-          "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80&auto=format&fit=crop",
-        alt: "Flyers and handbills printing Lagos",
-      },
-      {
         title: "Sticker Printing",
         description:
           "Custom stickers in all shapes and sizes — product labels, bumper stickers, window decals, and branded seals.",
         image: "/images/sticker.jpeg",
         alt: "Sticker printing custom printing Nigeria",
-      },
-      {
-        title: "Souvenirs & Corporate Gifts",
-        description:
-          "Branded souvenirs, gift items, and corporate giveaways — pens, notebooks, keychains, and custom merchandise.",
-        image:
-          "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&q=80&auto=format&fit=crop",
-        alt: "Corporate gifts souvenirs Lagos",
       },
       {
         title: "Mug Branding",
@@ -202,14 +154,6 @@ const SERVICE_SECTIONS: ServiceSection[] = [
           "Screen printing, heat transfer, and DTG t-shirt printing for events, teams, uniforms, and promotional wear.",
         image: "/images/t_shirt.jpeg",
         alt: "T-shirt printing business branding Lagos",
-      },
-      {
-        title: "UV Printing",
-        description:
-          "Advanced UV printing on diverse materials — wood, glass, metal, acrylic, and more. Vibrant colors with instant curing.",
-        image:
-          "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80&auto=format&fit=crop",
-        alt: "UV printing custom printing Nigeria",
       },
     ],
   },
