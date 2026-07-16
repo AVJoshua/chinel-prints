@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { THEME_STORAGE_KEY } from "@/lib/theme";
 import { SITE_URL, assetPath } from "@/lib/site";
 import "./globals.css";
 
@@ -21,7 +23,13 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: { icon: assetPath("/logo.png") },
+  icons: {
+    icon: [
+      { url: assetPath("/favicon.svg"), type: "image/svg+xml" },
+      { url: assetPath("/favicon.ico"), sizes: "32x32" },
+    ],
+    shortcut: assetPath("/favicon.ico"),
+  },
   title: {
     default: "Chinel Prints — Printing & Branding Company in Lagos, Nigeria",
     template: "%s — Chinel Prints",
@@ -50,14 +58,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var s=localStorage.getItem(k);var d=window.matchMedia("(prefers-color-scheme: dark)").matches;var t=s==="dark"||s==="light"?s:(d?"dark":"light");document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t;}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${plusJakarta.variable}`}
         suppressHydrationWarning
       >
-        <Header />
-        {children}
-        <Footer />
-        <WhatsAppFloat />
+        <ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
+          <WhatsAppFloat />
+        </ThemeProvider>
       </body>
     </html>
   );

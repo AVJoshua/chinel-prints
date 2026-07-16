@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getWhatsAppUrl } from "@/lib/config";
 import { Logo } from "@/components/logo";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -59,6 +60,7 @@ export function Header() {
           </nav>
 
           <div className="header__actions">
+            <ThemeToggle />
             <Link href="/#quote" className="btn btn--primary btn--sm header__cta">
               Request Quote
             </Link>
@@ -93,6 +95,9 @@ export function Header() {
             </li>
           ))}
         </ul>
+        <div className="mobile-nav__theme">
+          <ThemeToggle />
+        </div>
         <div className="mobile-nav__cta">
           <Link
             href="/#quote"
