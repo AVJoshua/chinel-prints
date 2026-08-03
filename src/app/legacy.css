@@ -439,27 +439,6 @@ html[data-theme="dark"] .logo--header .logo__image--dark {
   overflow: hidden;
 }
 
-@media (max-width: 639px) {
-  .hero {
-    min-height: auto;
-  }
-
-  /* Keep the right half of the banner in view on narrow screens */
-  .hero__overlay {
-    background-position: right center;
-  }
-
-  .hero__content {
-    padding: 2.5rem 0 3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero__overlay {
-    background-position: right center;
-  }
-}
-
 .hero__overlay {
   position: absolute;
   inset: 0;
@@ -473,6 +452,26 @@ html[data-theme="dark"] .logo--header .logo__image--dark {
   position: absolute;
   inset: 0;
   background: rgba(var(--color-brand-rgb), 0.45);
+}
+
+@media (max-width: 639px) {
+  .hero {
+    min-height: auto;
+  }
+
+  /*
+   * Show the right 50% of the banner on small screens.
+   * Image is scaled to 200% width so one half fills the viewport; pinned to the right.
+   * Must come after the base .hero__overlay rule so these overrides win.
+   */
+  .hero__overlay {
+    background-size: 200% auto;
+    background-position: right center;
+  }
+
+  .hero__content {
+    padding: 2.5rem 0 3rem;
+  }
 }
 
 .hero__content {
