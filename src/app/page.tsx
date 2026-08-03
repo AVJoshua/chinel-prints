@@ -33,13 +33,12 @@ export default function HomePage() {
       {/* Hero */}
       <section className="hero" aria-label="Hero">
         <div
-          className="hero__bg"
+          className="hero__overlay"
           aria-hidden="true"
           style={{
-            backgroundImage: `url("${encodeURI(assetPath("/images/chinel_prints_banne .jpg"))}")`,
+            backgroundImage: `url("${encodeURI(assetPath("/images/chinel_prints_banner.jpg"))}")`,
           }}
         />
-        <div className="hero__overlay" aria-hidden="true" />
         <div className="container hero__content">
           <HeroIntro />
           <div className="hero__actions">
