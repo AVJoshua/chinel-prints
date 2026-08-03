@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   icons: {
     icon: [
-      { url: assetPath("/favicon.svg"), type: "image/svg+xml" },
-      { url: assetPath("/favicon.ico"), sizes: "32x32" },
+      { url: assetPath("/logo.png"), type: "image/png", sizes: "any" },
     ],
-    shortcut: assetPath("/favicon.ico"),
+    shortcut: assetPath("/logo.png"),
+    apple: assetPath("/logo.png"),
   },
   title: {
     default: "Chinel Prints — Printing & Branding Company in Lagos, Nigeria",
