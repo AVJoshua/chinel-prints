@@ -444,8 +444,9 @@ html[data-theme="dark"] .logo--header .logo__image--dark {
     min-height: auto;
   }
 
+  /* Keep the right half of the banner in view on narrow screens */
   .hero__overlay {
-    background-position: center 32%;
+    background-position: right center;
   }
 
   .hero__content {
@@ -455,7 +456,7 @@ html[data-theme="dark"] .logo--header .logo__image--dark {
 
 @media (max-width: 480px) {
   .hero__overlay {
-    background-position: center 28%;
+    background-position: right center;
   }
 }
 
